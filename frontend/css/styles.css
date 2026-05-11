@@ -1,0 +1,183 @@
+/* 1. Reset y Estilos Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f7f9;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* 2. Header y Navegación */
+.logo-circle {
+  background: white;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* 3. Hero Section (Buscador y Título) */
+.hero {
+  background: linear-gradient(rgba(183, 28, 28, 0.9), rgba(183, 28, 28, 0.9)),
+              url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 4rem 1rem;
+}
+
+.search-box {
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  padding: 5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.search-box input {
+  border: none;
+  padding: 12px 20px;
+  flex-grow: 1;
+  outline: none;
+}
+
+/* 4. Estadísticas */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+/* 5. Layout Principal (Sidebar y Grilla) */
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr; /* Sidebar fija y contenido flexible */
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.grid-tramites {
+  display: grid;
+  /* Esto permite que las tarjetas se ajusten solas al ancho */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* 6. PRESENTACIÓN DE LA DATA (Tarjetas de Trámite) 
+   Estos estilos son críticos para que la data se vea bien al cargar */
+.tramite-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-bottom: 4px solid #d32f2f; /* Rojo GOB.PE */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tramite-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.tramite-card h3 {
+  font-size: 1.2rem;
+  color: #00489e; /* Azul institucional para enlaces/títulos */
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.tramite-card .entidad {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.tramite-card .descripcion {
+  font-size: 0.95rem;
+  color: #444;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.tramite-card .meta-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.badge-online {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* 7. Footer */
+.footer {
+  background: #1d1d1b;
+  color: white;
+  padding: 3rem 0;
+}
+
+.btn-outline-light {
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: #d32f2f !important; /* Rojo institucional */
+}
+
+
+
+/* 8. Responsividad (Media Queries) */
+@media (max-width: 62em) { /* tablets y laptops pequeñas */
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 48em) { /* celulares */
+  .hero h1 { font-size: 1.8rem; }
+  .search-box { flex-direction: column; }
+  .search-box button { width: 100%; margin-top: 5px; }
+}

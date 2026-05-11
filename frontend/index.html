@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Digital GOB.PE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow-sm">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+          <span class="logo-circle">🇵🇪</span>
+          <span class="ms-2">GOB.PE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Trámites</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Ayuda</a></li>
+            <li class="nav-item ms-lg-3">
+          <a class="btn btn-outline-light btn-sm" href="admin.html">
+            <i class="bi bi-person-lock"></i> Iniciar sesión
+          </a>
+        </li>
+        
+          </ul>
+        </div>
+        
+
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold">Plataforma Digital del Estado Peruano</h1>
+      <p class="lead mt-3">Busca trámites, servicios y orientación ciudadana en un solo lugar.</p>
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-8">
+          <!-- Se mantiene el ID buscador para tu script app.js -->
+          <div class="search-box shadow">
+            <input type="text" id="buscador" class="form-control 
+              buscador-principal" 
+              placeholder="Buscar trámites, servicios o entidades" 
+              aria-label="Buscar trámites">
+            <button class="btn btn-dark" id="btnBuscar">Buscar</button>
+          </div>
+        </div>
+      </div>
+      <div class="stats mt-5">
+        <div class="stat-card"><h3>19+</h3><p>Trámites Digitalizados</p></div>
+        <div class="stat-card"><h3>60,000+</h3><p>Ciudadanos Capacitados</p></div>
+        <div class="stat-card"><h3>8,100+</h3><p>Innovadores Digitales</p></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container-fluid px-4 mt-5">
+    <div class="layout">
+      <!-- SIDEBAR CON TODOS TUS FILTROS ORIGINALES -->
+      <aside class="sidebar">
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <h2 class="h5 fw-bold mb-4">Filtros de búsqueda</h2>
+            
+            <label for="filtroCategoria" class="form-label">Categoría</label>
+            <select id="filtroCategoria" class="form-select mb-3">
+              <option value="">Todas las categorías</option>
+              <option value="Identidad">Identidad</option>
+              <option value="Salud">Salud</option>
+              <option value="Educación">Educación</option>
+              <option value="Impuestos">Impuestos</option>
+              <option value="Vehículos">Vehículos</option>
+            </select>
+
+            <label for="filtroEntidad" class="form-label">Entidad</label>
+            <select id="filtroEntidad" class="form-select mb-3">
+              <option value="">Todas las entidades</option>
+              <option value="RENIEC">RENIEC</option>
+              <option value="SUNAT">SUNAT</option>
+              <option value="MTC">MTC</option>
+              <option value="MINSA">MINSA</option>
+              <option value="MINEDU">MINEDU</option>
+            </select>
+
+            <label for="filtroModalidad" class="form-label">Modalidad</label>
+            <select id="filtroModalidad" class="form-select mb-3">
+              <option value="">Todas</option>
+              <option value="Online">Online</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Presencial y online">Mixto</option>
+            </select>
+
+            <label for="filtroCosto" class="form-label">Costo</label>
+            <select id="filtroCosto" class="form-select mb-3">
+              <option value="">Todos</option>
+              <option value="Gratis">Gratis</option>
+              <option value="economico">Menos de S/20</option>
+              <option value="alto">Más de S/20</option>
+            </select>
+
+            <label for="filtroRegion" class="form-label">Región</label>
+            <select id="filtroRegion" class="form-select mb-3">
+              <option value="">Todas las regiones</option>
+              <option value="Lima">Lima</option>
+              <option value="Cusco">Cusco</option>
+              <option value="Arequipa">Arequipa</option>
+              <option value="Piura">Piura</option>
+            </select>
+
+            <label for="filtroTipo" class="form-label">Tipo de servicio</label>
+            <select id="filtroTipo" class="form-select mb-3">
+              <option value="">Todos</option>
+              <option value="Consulta">Consulta</option>
+              <option value="Pago">Pago</option>
+              <option value="Certificado">Certificado</option>
+              <option value="Registro">Registro</option>
+            </select>
+
+            <div class="form-check mt-3">
+              <input class="form-check-input" type="checkbox" id="gratis">
+              <label class="form-check-label" for="gratis">Mostrar solo gratuitos</label>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="contenido-principal">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+          <h2 class="h4 fw-bold">Resultados de búsqueda</h2>
+          <select class="form-select w-auto" id="ordenar">
+            <option>Más relevante</option>
+            <option>Más reciente</option>
+            <option value="az">A-Z</option>
+          </select>
+        </div>
+
+        <!-- SPINNER: Importante que el ID coincida con tu ui.js -->
+        <div id="spinner" class="text-center mb-4">
+          <div class="spinner-border text-danger" role="status"></div>
+        </div>
+
+        <!-- CONTENEDOR: Aquí se inyecta la data desde api.js/ui.js -->
+        <div id="contenedorTramites" class="grid-tramites"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>GOB.PE</h5>
+          <p>Plataforma digital única del Estado Peruano.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Enlaces</h5>
+          <ul class="list-unstyled">
+            <li>Política de privacidad</li>
+            <li>Accesibilidad</li>
+            <li>Mesa de ayuda</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contacto</h5>
+          <p>soporte@gob.pe</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS ORIGINALES: Se restauran para que la lógica funcione -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
