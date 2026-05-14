@@ -1,18 +1,12 @@
-const express = require("express");
-
+const express = require('express');
 const router = express.Router();
+// Importamos el controlador
+const tramitesController = require('../controllers/tramitescontroller');
 
-const {
+// Si escribes mal el nombre de la función aquí, saldrá el TypeError
+router.get('/', tramitesController.obtenerTodos); 
 
-  obtenerTramites,
-  buscarTramites
-
-} = require(
-  "../controllers/tramitesController"
-);
-
-router.get("/", obtenerTramites);
-
-router.get("/buscar", buscarTramites);
+// Esta es la ruta que agregamos para la búsqueda
+router.get('/buscar', tramitesController.buscarTramite);
 
 module.exports = router;

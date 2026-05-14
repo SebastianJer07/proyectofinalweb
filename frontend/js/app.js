@@ -1,7 +1,3 @@
-const contenedor =
-  document.getElementById(
-    "contenedorTramites"
-  );
 
 const buscador =
   document.getElementById(
@@ -48,6 +44,12 @@ const gratis =
     "gratis"
   );
 
+  const contenedor =
+  document.getElementById(
+    "contenedorTramites"
+  );
+
+
 
   
 let tramitesGlobal = [];
@@ -86,10 +88,9 @@ function mostrarTramites(tramites){
   tramites.forEach(tramite => {
     contenedor.innerHTML +=
       crearCard(tramite);
-  });
+  });}
 
-}
-
+  
 function aplicarFiltros(){
 
   let resultados =

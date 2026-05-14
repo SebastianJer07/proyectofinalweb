@@ -2,19 +2,15 @@ const jwt = require("jsonwebtoken");
 
 const auth = (req, res, next) => {
   let token = req.header("Authorization");
-
   if (!token) {
     return res.status(401).json({
       mensaje: "Acceso denegado"
     });
   }
-
   try {
-    // IMPORTANTE: Si el token viene con "Bearer ", lo limpiamos
     if (token.startsWith("Bearer ")) {
       token = token.slice(7, token.length); 
     }
-
     const verificar = jwt.verify(token, "CLAVE_SECRETA");
     req.usuario = verificar;
     next();
@@ -24,5 +20,4 @@ const auth = (req, res, next) => {
     });
   }
 };
-
 module.exports = auth;

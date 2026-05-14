@@ -13,7 +13,7 @@ body {
   font-size: 1rem;
 }
 
-/* 2. Header y Navegación */
+
 .logo-circle {
   background: white;
   width: 2.2rem;
@@ -25,7 +25,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* 3. Hero Section (Buscador y Título) */
+
 .hero {
   background: linear-gradient(rgba(183, 28, 28, 0.9), rgba(183, 28, 28, 0.9)),
               url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80');
@@ -50,7 +50,7 @@ body {
   outline: none;
 }
 
-/* 4. Estadísticas */
+
 .stats {
   display: flex;
   justify-content: center;
@@ -74,10 +74,10 @@ body {
   margin-bottom: 5px;
 }
 
-/* 5. Layout Principal (Sidebar y Grilla) */
+
 .layout {
   display: grid;
-  grid-template-columns: 280px 1fr; /* Sidebar fija y contenido flexible */
+  grid-template-columns: 280px 1fr; 
   gap: 30px;
   max-width: 1400px;
   margin: 0 auto;
@@ -85,13 +85,12 @@ body {
 
 .grid-tramites {
   display: grid;
-  /* Esto permite que las tarjetas se ajusten solas al ancho */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(
+  auto-fill,minmax(300px, 1fr));
   gap: 20px;
 }
 
-/* 6. PRESENTACIÓN DE LA DATA (Tarjetas de Trámite) 
-   Estos estilos son críticos para que la data se vea bien al cargar */
+
 .tramite-card {
   background: white;
   border-radius: 8px;
@@ -111,7 +110,7 @@ body {
 
 .tramite-card h3 {
   font-size: 1.2rem;
-  color: #00489e; /* Azul institucional para enlaces/títulos */
+  color: #00489e; 
   margin-bottom: 10px;
   font-weight: 700;
 }
@@ -147,7 +146,7 @@ body {
   font-weight: 500;
 }
 
-/* 7. Footer */
+
 .footer {
   background: #1d1d1b;
   color: white;
@@ -163,20 +162,19 @@ body {
 
 .btn-outline-light:hover {
     background-color: white;
-    color: #d32f2f !important; /* Rojo institucional */
+    color: #d32f2f !important;
 }
 
 
 
-/* 8. Responsividad (Media Queries) */
-@media (max-width: 62em) { /* tablets y laptops pequeñas */
+@media (max-width: 62em) { 
   .layout {
     grid-template-columns: 1fr;
     padding: 0 15px;
   }
 }
 
-@media (max-width: 48em) { /* celulares */
+@media (max-width: 48em) { 
   .hero h1 { font-size: 1.8rem; }
   .search-box { flex-direction: column; }
   .search-box button { width: 100%; margin-top: 5px; }

@@ -44,8 +44,8 @@
 
   <section class="hero">
     <div class="container text-center">
-      <h1 class="display-5 fw-bold">Plataforma Digital del Estado Peruano</h1>
-      <p class="lead mt-3">Busca trámites, servicios y orientación ciudadana en un solo lugar.</p>
+      <h1 class="display-5 fw-bold">Consulta de trámites del Estado Peruano</h1>
+      <p class="lead mt-3">Proyecto académico que permite buscar trámites y servicios públicos.</p>
       <div class="row justify-content-center mt-4">
         <div class="col-lg-8">
           <!-- Se mantiene el ID buscador para tu script app.js -->
@@ -68,7 +68,6 @@
 
   <main class="container-fluid px-4 mt-5">
     <div class="layout">
-      <!-- SIDEBAR CON TODOS TUS FILTROS ORIGINALES -->
       <aside class="sidebar">
         <div class="card shadow-sm border-0">
           <div class="card-body">
@@ -146,12 +145,9 @@
           </select>
         </div>
 
-        <!-- SPINNER: Importante que el ID coincida con tu ui.js -->
         <div id="spinner" class="text-center mb-4">
           <div class="spinner-border text-danger" role="status"></div>
         </div>
-
-        <!-- CONTENEDOR: Aquí se inyecta la data desde api.js/ui.js -->
         <div id="contenedorTramites" class="grid-tramites"></div>
       </section>
     </div>
@@ -180,7 +176,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS ORIGINALES: Se restauran para que la lógica funcione -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/api.js"></script>
   <script src="js/ui.js"></script>
